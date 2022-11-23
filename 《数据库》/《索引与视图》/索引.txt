@@ -1,0 +1,30 @@
+使用T-SQL语句建立索引：在新建查询窗口中输入下列语句,并单击“执行”按钮。
+
+USE jxsk
+GO
+CREATE UNIQUE CLUSTERED INDEX student_index1 ON s(sno ASC)
+GO
+ (2) 使用SQL Server Management Studio 查询窗口在student表中新建一个惟一非簇索引，命名为student_index2，使用字段stu_id。
+实验操作步骤：
+在查询窗口输入下列SQL语句：
+USE jxsk
+GO
+CREATE UNIQUE NONCLUSTERED INDEX student_index2 ON student
+(stu_id  ASC)
+ (3)通过新建学院College表添加主键约束来使SQL Server 2016自动为该表生成一个惟一性的簇索引。
+操作步骤：
+在SQL Server Management Studio 查询窗口中键入以下语句：
+use jxsk
+create table College
+(
+col_ID smallint primary key,
+col_name char(8),
+)
+GO
+ (4)使用SQL Server Management Studio向导删除Reader表中的student_index2索引.
+操作步骤： 
+1）启动SQL Server Management Studio查询窗口。
+2）在查询窗口中键入以下SQL语句：
+use jxsk
+DROP INDEX  student.student_index2
+GO
