@@ -1,0 +1,35 @@
+1.CREATE CLUSTERED INDEX Tno_index ON 教师表(教师工号 DESC)
+
+2..CREATE UNIQUE INDEX Tno_Index ON 教师任课表(工号)
+
+3. DROP  INDEX  Tno_index ON 教师表
+
+4.CREATE VIEW TeaCou_view AS
+SELECT 工号,姓名,课程名称，课程类型
+From 教师任课表
+
+5.CREATE VIEW StuNo_view AS
+SELECT 学号,姓名,年龄,专业
+From 学生
+
+6.CREATE VIEW ScoreAvg_view AS
+SELECT 学号,平均成绩
+From 学生
+
+7.SELECT 学生信息（姓名，平均成绩）
+From ScoreAvg_view
+WHERE 学生<60
+
+8.DROP VIEW (课程类型)
+From ScroLow_view
+
+
+9.DROP VIEW ScroLow_view
+
+10.SELECT 任课信息
+From 教师
+Where 性别= '男'
+
+11.UPDATE StuNo_view
+SET 学生专业='软件工程'
+WHERE 学号='BX15236'
